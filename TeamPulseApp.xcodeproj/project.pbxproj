@@ -12,6 +12,10 @@
 		5997BA081EAC14B600EB9B83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5997BA061EAC14B600EB9B83 /* Main.storyboard */; };
 		5997BA0A1EAC14B600EB9B83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5997BA091EAC14B600EB9B83 /* Assets.xcassets */; };
 		5997BA0D1EAC14B600EB9B83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5997BA0B1EAC14B600EB9B83 /* LaunchScreen.storyboard */; };
+		5997BA171EAC184E00EB9B83 /* NewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997BA161EAC184E00EB9B83 /* NewTeamViewController.swift */; };
+		5997BA191EAC18FF00EB9B83 /* TeamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997BA181EAC18FF00EB9B83 /* TeamID.swift */; };
+		5997BA1B1EAC221900EB9B83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5997BA1A1EAC221900EB9B83 /* GoogleService-Info.plist */; };
+		A9F02255BC958201B94ABF8A /* Pods_TeamPulseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA541178BB2A06F75BC3F496 /* Pods_TeamPulseApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,12 @@
 		5997BA091EAC14B600EB9B83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5997BA0C1EAC14B600EB9B83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5997BA0E1EAC14B600EB9B83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5997BA161EAC184E00EB9B83 /* NewTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTeamViewController.swift; sourceTree = "<group>"; };
+		5997BA181EAC18FF00EB9B83 /* TeamID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamID.swift; sourceTree = "<group>"; };
+		5997BA1A1EAC221900EB9B83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6F60852242076ABF8C32587B /* Pods-TeamPulseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPulseApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp.release.xcconfig"; sourceTree = "<group>"; };
+		89441C961D553DC7EF1194D9 /* Pods-TeamPulseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPulseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BA541178BB2A06F75BC3F496 /* Pods_TeamPulseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamPulseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F02255BC958201B94ABF8A /* Pods_TeamPulseApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E35C5BF716BDA83F69A5D3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA541178BB2A06F75BC3F496 /* Pods_TeamPulseApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5997B9F61EAC14B600EB9B83 = {
 			isa = PBXGroup;
 			children = (
 				5997BA011EAC14B600EB9B83 /* TeamPulseApp */,
 				5997BA001EAC14B600EB9B83 /* Products */,
+				7A6BDE1B25883CAD7E96B75F /* Pods */,
+				2E35C5BF716BDA83F69A5D3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +77,24 @@
 			children = (
 				5997BA021EAC14B600EB9B83 /* AppDelegate.swift */,
 				5997BA041EAC14B600EB9B83 /* ViewController.swift */,
+				5997BA161EAC184E00EB9B83 /* NewTeamViewController.swift */,
+				5997BA181EAC18FF00EB9B83 /* TeamID.swift */,
 				5997BA061EAC14B600EB9B83 /* Main.storyboard */,
 				5997BA091EAC14B600EB9B83 /* Assets.xcassets */,
+				5997BA1A1EAC221900EB9B83 /* GoogleService-Info.plist */,
 				5997BA0B1EAC14B600EB9B83 /* LaunchScreen.storyboard */,
 				5997BA0E1EAC14B600EB9B83 /* Info.plist */,
 			);
 			path = TeamPulseApp;
+			sourceTree = "<group>";
+		};
+		7A6BDE1B25883CAD7E96B75F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89441C961D553DC7EF1194D9 /* Pods-TeamPulseApp.debug.xcconfig */,
+				6F60852242076ABF8C32587B /* Pods-TeamPulseApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5997BA111EAC14B600EB9B83 /* Build configuration list for PBXNativeTarget "TeamPulseApp" */;
 			buildPhases = (
+				6E418278BF7660F8ACEEC052 /* [CP] Check Pods Manifest.lock */,
 				5997B9FB1EAC14B600EB9B83 /* Sources */,
 				5997B9FC1EAC14B600EB9B83 /* Frameworks */,
 				5997B9FD1EAC14B600EB9B83 /* Resources */,
+				7DC550F022B6202D7A8F7D64 /* [CP] Embed Pods Frameworks */,
+				48BAC99BFFFE77A24C0F3189 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5997BA0D1EAC14B600EB9B83 /* LaunchScreen.storyboard in Resources */,
+				5997BA1B1EAC221900EB9B83 /* GoogleService-Info.plist in Resources */,
 				5997BA0A1EAC14B600EB9B83 /* Assets.xcassets in Resources */,
 				5997BA081EAC14B600EB9B83 /* Main.storyboard in Resources */,
 			);
@@ -132,13 +169,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48BAC99BFFFE77A24C0F3189 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E418278BF7660F8ACEEC052 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7DC550F022B6202D7A8F7D64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5997B9FB1EAC14B600EB9B83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5997BA051EAC14B600EB9B83 /* ViewController.swift in Sources */,
+				5997BA171EAC184E00EB9B83 /* NewTeamViewController.swift in Sources */,
 				5997BA031EAC14B600EB9B83 /* AppDelegate.swift in Sources */,
+				5997BA191EAC18FF00EB9B83 /* TeamID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +346,7 @@
 		};
 		5997BA121EAC14B600EB9B83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89441C961D553DC7EF1194D9 /* Pods-TeamPulseApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YVMN53DHRA;
@@ -272,6 +360,7 @@
 		};
 		5997BA131EAC14B600EB9B83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F60852242076ABF8C32587B /* Pods-TeamPulseApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YVMN53DHRA;
@@ -302,6 +391,7 @@
 				5997BA131EAC14B600EB9B83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
