@@ -23,16 +23,19 @@ class NewTeamViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBAction func onButtonPress(_ sender: UIButton) {
-        TeamID.teamID = Int(self.inputTeamID.text!)!
-        if((self.inputPassword.text) == (self.inputConfirm.text)){
-            self.ref.child(String(TeamID.teamID)).setValue(self.inputPassword.text)
+    @IBAction func onDone(_ sender: UIBarButtonItem) {
+        if(!(self.inputTeamID.text?.isEmpty)!){
+            TeamID.teamID = self.inputTeamID.text!
+            if((self.inputPassword.text) == (self.inputConfirm.text)){
+                self.ref.child("Teams").child(TeamID.teamID).child("password").setValue(self.inputPassword.text)
+            }
+            else{
+                invalidPassword.isHidden = false
+                inputPassword.text?.removeAll()
+                inputConfirm.text?.removeAll()
+            }
         }
-        else{
-            invalidPassword.isHidden = false
-            inputPassword.text?.removeAll()
-            inputConfirm.text?.removeAll()
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

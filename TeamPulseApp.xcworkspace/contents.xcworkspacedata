@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TeamPulseApp/NewSurveyViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:AddSurveyViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:TeamPulseApp.xcodeproj">
    </FileRef>
    <FileRef

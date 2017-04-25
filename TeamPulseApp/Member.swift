@@ -1,5 +1,5 @@
 //
-//  TeamID.swift
+//  Member.swift
 //  TeamPulseApp
 //
 //  Created by Rusheel Shah on 4/22/17.
@@ -7,10 +7,8 @@
 //
 
 import Foundation
-import Firebase
 
-
-struct TeamID{
-    static var teamID: String = ""
+class Member{
+    static var isPlayer: Bool = false
+    static var isCoach: Bool = false
 }
-
