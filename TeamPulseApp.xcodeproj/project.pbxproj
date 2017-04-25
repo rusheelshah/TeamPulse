@@ -32,6 +32,7 @@
 		59A0BF0B1EAF2C47008837A1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF0A1EAF2C47008837A1 /* Player.swift */; };
 		59A0BF0D1EAF3273008837A1 /* PlayerSurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF0C1EAF3273008837A1 /* PlayerSurveyListViewController.swift */; };
 		59A0BF0F1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF0E1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift */; };
+		59CB32F41EAFBF5100B1790E /* PlayerResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB32F31EAFBF5100B1790E /* PlayerResponseViewController.swift */; };
 		A9F02255BC958201B94ABF8A /* Pods_TeamPulseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA541178BB2A06F75BC3F496 /* Pods_TeamPulseApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		59A0BF0A1EAF2C47008837A1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		59A0BF0C1EAF3273008837A1 /* PlayerSurveyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSurveyListViewController.swift; sourceTree = "<group>"; };
 		59A0BF0E1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSurveyListTableViewCell.swift; sourceTree = "<group>"; };
+		59CB32F31EAFBF5100B1790E /* PlayerResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerResponseViewController.swift; sourceTree = "<group>"; };
 		6F60852242076ABF8C32587B /* Pods-TeamPulseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPulseApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp.release.xcconfig"; sourceTree = "<group>"; };
 		89441C961D553DC7EF1194D9 /* Pods-TeamPulseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPulseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BA541178BB2A06F75BC3F496 /* Pods_TeamPulseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamPulseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 				5907B3061EAD08C400204932 /* MyTeamTableCell.swift */,
 				5997BA1E1EAC27F800EB9B83 /* Member.swift */,
 				5997BA061EAC14B600EB9B83 /* Main.storyboard */,
+				59CB32F31EAFBF5100B1790E /* PlayerResponseViewController.swift */,
 				59A0BF0C1EAF3273008837A1 /* PlayerSurveyListViewController.swift */,
 				59A0BF0E1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift */,
 				59A0BF0A1EAF2C47008837A1 /* Player.swift */,
@@ -303,6 +306,7 @@
 				59A0BEFD1EAE6271008837A1 /* Survey.swift in Sources */,
 				5907B3071EAD08C400204932 /* MyTeamTableCell.swift in Sources */,
 				5997BA191EAC18FF00EB9B83 /* TeamID.swift in Sources */,
+				59CB32F41EAFBF5100B1790E /* PlayerResponseViewController.swift in Sources */,
 				5907B3051EACF38300204932 /* MyTeamTableViewController.swift in Sources */,
 				59A0BF0B1EAF2C47008837A1 /* Player.swift in Sources */,
 				59A0BF0F1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift in Sources */,

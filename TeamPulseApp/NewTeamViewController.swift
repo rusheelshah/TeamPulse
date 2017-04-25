@@ -28,6 +28,7 @@ class NewTeamViewController: UIViewController {
             TeamID.teamID = self.inputTeamID.text!
             if((self.inputPassword.text) == (self.inputConfirm.text)){
                 self.ref.child("Teams").child(TeamID.teamID).child("password").setValue(self.inputPassword.text)
+                self.dismiss(animated: true, completion: nil)
             }
             else{
                 invalidPassword.isHidden = false
@@ -35,7 +36,6 @@ class NewTeamViewController: UIViewController {
                 inputConfirm.text?.removeAll()
             }
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

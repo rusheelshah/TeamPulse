@@ -41,7 +41,7 @@ class NewSurveyViewController: UIViewController {
         self.ref.child("Teams").child(self.currentTeam).child(surveyName).child("3").setValue(question3.text)
         self.ref.child("Teams").child(self.currentTeam).child(surveyName).child("4").setValue(question4.text)
         self.ref.child("Teams").child(self.currentTeam).child(surveyName).child("5").setValue(question5.text)
-            self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
