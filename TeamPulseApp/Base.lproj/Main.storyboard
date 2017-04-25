@@ -134,22 +134,34 @@
             </objects>
             <point key="canvasLocation" x="-671.20000000000005" y="726.38680659670172"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Title-->
         <scene sceneID="HJJ-7b-lhs">
             <objects>
-                <tableViewController id="NTq-id-T7u" sceneMemberID="viewController">
+                <tableViewController id="NTq-id-T7u" customClass="PlayerSurveyListViewController" customModule="TeamPulseApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r0l-uv-nJ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Mts-hD-jsh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Mts-hD-jsh" customClass="PlayerSurveyListTableViewCell" customModule="TeamPulseApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mts-hD-jsh" id="4hb-h2-sQO">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wT-RO-miN">
+                                            <rect key="frame" x="8" y="11" width="359" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="surveyLabel" destination="1wT-RO-miN" id="cC4-e0-7PN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -157,11 +169,14 @@
                             <outlet property="delegate" destination="NTq-id-T7u" id="iW7-Lj-1Iu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="N72-av-1Ug"/>
+                    <navigationItem key="navigationItem" title="Title" id="N72-av-1Ug"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="N72-av-1Ug" id="UW9-U6-SV3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaY-Hv-LYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="726"/>
+            <point key="canvasLocation" x="1116" y="725.48725637181417"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4vq-kV-gE5">

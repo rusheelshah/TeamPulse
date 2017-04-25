@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlayerLoginViewController.swift"
-            timestampString = "514791713.131899"
+            timestampString = "514798855.01171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "onGoButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
