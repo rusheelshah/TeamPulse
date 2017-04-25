@@ -42,6 +42,7 @@
                                 <state key="normal" title="Player"/>
                                 <connections>
                                     <action selector="onPlayerButton:" destination="YFA-2x-vf3" eventType="touchUpInside" id="g8A-5k-dxZ"/>
+                                    <segue destination="FMd-IP-F6t" kind="presentation" id="fdP-22-nG8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqG-6d-aMb">
@@ -61,6 +62,122 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Les-iR-LBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-714.39999999999998" y="-78.710644677661179"/>
+        </scene>
+        <!--Player Login View Controller-->
+        <scene sceneID="wOb-aW-7cU">
+            <objects>
+                <viewController id="FMd-IP-F6t" customClass="PlayerLoginViewController" customModule="TeamPulseApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CwX-yJ-jXf"/>
+                        <viewControllerLayoutGuide type="bottom" id="bWZ-je-7ST"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AfG-GM-45A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8f-dz-Luh">
+                                <rect key="frame" x="108" y="65" width="158" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter TeamID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTb-GH-nMN">
+                                <rect key="frame" x="120" y="195" width="135" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeS-Ks-ONd">
+                                <rect key="frame" x="120" y="233" width="135" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invalid team and/or password " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8n-a4-tZ6">
+                                <rect key="frame" x="73" y="114" width="228" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74S-zc-AC7">
+                                <rect key="frame" x="156" y="271" width="63" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Go!"/>
+                                <connections>
+                                    <action selector="onGoButton:" destination="FMd-IP-F6t" eventType="touchUpInside" id="Bc8-Bm-xBN"/>
+                                    <segue destination="P4h-Wx-Roi" kind="show" identifier="playerAuthenticated" id="081-LS-kgh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-lS-wOo">
+                                <rect key="frame" x="120" y="157" width="135" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputName" destination="7lz-lS-wOo" id="uXb-Zi-H2C"/>
+                        <outlet property="inputPassword" destination="XeS-Ks-ONd" id="80o-Pd-rxJ"/>
+                        <outlet property="inputTeam" destination="fTb-GH-nMN" id="q9Z-np-dn0"/>
+                        <outlet property="invalidLogin" destination="U8n-a4-tZ6" id="BIO-2t-el1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k31-5g-pAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671.20000000000005" y="726.38680659670172"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="HJJ-7b-lhs">
+            <objects>
+                <tableViewController id="NTq-id-T7u" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r0l-uv-nJ8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Mts-hD-jsh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mts-hD-jsh" id="4hb-h2-sQO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NTq-id-T7u" id="LvH-Ve-Qay"/>
+                            <outlet property="delegate" destination="NTq-id-T7u" id="iW7-Lj-1Iu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="N72-av-1Ug"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qaY-Hv-LYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="726"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4vq-kV-gE5">
+            <objects>
+                <navigationController id="P4h-Wx-Roi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xfh-9U-J1D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NTq-id-T7u" kind="relationship" relationship="rootViewController" id="rEA-CP-57c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y9T-ID-EGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="726"/>
         </scene>
         <!--My Teams-->
         <scene sceneID="nvc-4d-pSf">
@@ -163,7 +280,7 @@
             </objects>
             <point key="canvasLocation" x="1652" y="-79.610194902548727"/>
         </scene>
-        <!--Item 2-->
+        <!--Graph-->
         <scene sceneID="1aK-3V-Vhk">
             <objects>
                 <viewController id="dop-Pj-eae" customClass="GraphTabBarViewController" customModule="TeamPulseApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,13 +293,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="P1r-6c-Y8e"/>
+                    <tabBarItem key="tabBarItem" title="Graph" id="P1r-6c-Y8e"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFJ-sN-LPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3710" y="399"/>
         </scene>
-        <!--Item 1-->
+        <!--People-->
         <scene sceneID="VUN-Pf-3zJ">
             <objects>
                 <viewController id="J89-ov-FDZ" customClass="PeopleTabBarViewController" customModule="TeamPulseApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -195,7 +312,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="GW6-te-zbG"/>
+                    <tabBarItem key="tabBarItem" title="People" id="GW6-te-zbG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1T9-Fx-dMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

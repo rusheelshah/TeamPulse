@@ -28,6 +28,8 @@
 		59A0BF011EAEB4CA008837A1 /* SurveyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF001EAEB4CA008837A1 /* SurveyList.swift */; };
 		59A0BF031EAEF239008837A1 /* PeopleTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF021EAEF239008837A1 /* PeopleTabBarViewController.swift */; };
 		59A0BF051EAEF24F008837A1 /* GraphTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF041EAEF24F008837A1 /* GraphTabBarViewController.swift */; };
+		59A0BF091EAF04C8008837A1 /* PlayerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF081EAF04C8008837A1 /* PlayerLoginViewController.swift */; };
+		59A0BF0B1EAF2C47008837A1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF0A1EAF2C47008837A1 /* Player.swift */; };
 		A9F02255BC958201B94ABF8A /* Pods_TeamPulseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA541178BB2A06F75BC3F496 /* Pods_TeamPulseApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		59A0BF001EAEB4CA008837A1 /* SurveyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyList.swift; sourceTree = "<group>"; };
 		59A0BF021EAEF239008837A1 /* PeopleTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTabBarViewController.swift; sourceTree = "<group>"; };
 		59A0BF041EAEF24F008837A1 /* GraphTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTabBarViewController.swift; sourceTree = "<group>"; };
+		59A0BF081EAF04C8008837A1 /* PlayerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerLoginViewController.swift; path = ../PlayerLoginViewController.swift; sourceTree = "<group>"; };
+		59A0BF0A1EAF2C47008837A1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6F60852242076ABF8C32587B /* Pods-TeamPulseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPulseApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp.release.xcconfig"; sourceTree = "<group>"; };
 		89441C961D553DC7EF1194D9 /* Pods-TeamPulseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPulseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BA541178BB2A06F75BC3F496 /* Pods_TeamPulseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamPulseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,10 +128,12 @@
 				59A0BEFC1EAE6271008837A1 /* Survey.swift */,
 				59A0BF001EAEB4CA008837A1 /* SurveyList.swift */,
 				5997BA1C1EAC275C00EB9B83 /* LoginViewController.swift */,
+				59A0BF081EAF04C8008837A1 /* PlayerLoginViewController.swift */,
 				5907B3041EACF38300204932 /* MyTeamTableViewController.swift */,
 				5907B3061EAD08C400204932 /* MyTeamTableCell.swift */,
 				5997BA1E1EAC27F800EB9B83 /* Member.swift */,
 				5997BA061EAC14B600EB9B83 /* Main.storyboard */,
+				59A0BF0A1EAF2C47008837A1 /* Player.swift */,
 				59A0BF021EAEF239008837A1 /* PeopleTabBarViewController.swift */,
 				59A0BF041EAEF24F008837A1 /* GraphTabBarViewController.swift */,
 				5907B30A1EAE441F00204932 /* SurveyListTableViewController.swift */,
@@ -291,7 +297,9 @@
 				5907B3071EAD08C400204932 /* MyTeamTableCell.swift in Sources */,
 				5997BA191EAC18FF00EB9B83 /* TeamID.swift in Sources */,
 				5907B3051EACF38300204932 /* MyTeamTableViewController.swift in Sources */,
+				59A0BF0B1EAF2C47008837A1 /* Player.swift in Sources */,
 				5907B30B1EAE441F00204932 /* SurveyListTableViewController.swift in Sources */,
+				59A0BF091EAF04C8008837A1 /* PlayerLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
