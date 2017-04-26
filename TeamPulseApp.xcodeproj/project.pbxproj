@@ -200,7 +200,6 @@
 				TargetAttributes = {
 					5997B9FE1EAC14B600EB9B83 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = YVMN53DHRA;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -436,7 +435,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YVMN53DHRA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TeamPulseApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rusheelshah.TeamPulseApp;
@@ -451,7 +450,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YVMN53DHRA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TeamPulseApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rusheelshah.TeamPulseApp;
