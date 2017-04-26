@@ -25,16 +25,16 @@ class PlayerSurveyListViewController: UITableViewController {
         titleLabel.title = Player.playsFor
         currentSurveysRef.observe(.value, with: { (snapshot) in
             if(snapshot.hasChildren()){
+                print("num " + String(snapshot.childrenCount))
                 for child in snapshot.children{
                     if let node = child as? FIRDataSnapshot, var surveyName = node.key as? String{
-                        if(node.key != "password"){
+                        if(node.key != "password" && !(self.surveyList.contains(node.key))){
                             print("here: " + node.key)
                             self.surveyList.append(node.key)
                         }
                     }
                 }
-                print(Player.playerName)
-                print(self.surveyList)
+                print("Rusheel: " + String(self.surveyList.count))
                 self.tableView.reloadData()
             }
         })

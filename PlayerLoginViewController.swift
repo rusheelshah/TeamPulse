@@ -38,7 +38,7 @@ class PlayerLoginViewController: UIViewController {
             if snapshot.hasChildren(){
                 for child in snapshot.children{
                     let node = child as? FIRDataSnapshot
-                    print(node?.key)
+                    //print(node?.key)
                     if(node?.key == team){
                         for entry in (node?.children)!{
                             let item = entry as? FIRDataSnapshot

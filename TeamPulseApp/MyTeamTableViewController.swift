@@ -60,7 +60,7 @@ class MyTeamTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MyTeamTableViewCell else{
             fatalError("The dequeued cell is not an instance of MyTeamTableViewCell")
         }
-        print(TeamList.teamList.count)
+        //print(TeamList.teamList.count)
         cell.teamID.text = TeamList.teamList[indexPath.row]
         return cell
     }
