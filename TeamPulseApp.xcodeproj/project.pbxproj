@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579E9FB21EB0C7B000FAB5C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 579E9FB11EB0C7B000FAB5C0 /* GoogleService-Info.plist */; };
 		5907B3051EACF38300204932 /* MyTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5907B3041EACF38300204932 /* MyTeamTableViewController.swift */; };
 		5907B3071EAD08C400204932 /* MyTeamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5907B3061EAD08C400204932 /* MyTeamTableCell.swift */; };
 		5907B3091EADA51700204932 /* TeamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5907B3081EADA51700204932 /* TeamList.swift */; };
@@ -19,7 +20,6 @@
 		5997BA0D1EAC14B600EB9B83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5997BA0B1EAC14B600EB9B83 /* LaunchScreen.storyboard */; };
 		5997BA171EAC184E00EB9B83 /* NewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997BA161EAC184E00EB9B83 /* NewTeamViewController.swift */; };
 		5997BA191EAC18FF00EB9B83 /* TeamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997BA181EAC18FF00EB9B83 /* TeamID.swift */; };
-		5997BA1B1EAC221900EB9B83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5997BA1A1EAC221900EB9B83 /* GoogleService-Info.plist */; };
 		5997BA1D1EAC275C00EB9B83 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997BA1C1EAC275C00EB9B83 /* LoginViewController.swift */; };
 		5997BA1F1EAC27F800EB9B83 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997BA1E1EAC27F800EB9B83 /* Member.swift */; };
 		59A0BEFB1EAE6159008837A1 /* AddSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BEFA1EAE6159008837A1 /* AddSurveyViewController.swift */; };
@@ -53,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		579E9FB11EB0C7B000FAB5C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5907B3041EACF38300204932 /* MyTeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTeamTableViewController.swift; sourceTree = "<group>"; };
 		5907B3061EAD08C400204932 /* MyTeamTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTeamTableCell.swift; sourceTree = "<group>"; };
 		5907B3081EADA51700204932 /* TeamList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamList.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		5997BA0E1EAC14B600EB9B83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5997BA161EAC184E00EB9B83 /* NewTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTeamViewController.swift; sourceTree = "<group>"; };
 		5997BA181EAC18FF00EB9B83 /* TeamID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamID.swift; sourceTree = "<group>"; };
-		5997BA1A1EAC221900EB9B83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5997BA1C1EAC275C00EB9B83 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5997BA1E1EAC27F800EB9B83 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		59A0BEFA1EAE6159008837A1 /* AddSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSurveyViewController.swift; path = ../AddSurveyViewController.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 				5907B30A1EAE441F00204932 /* SurveyListTableViewController.swift */,
 				5907B30C1EAE444900204932 /* SurveyListTableCell.swift */,
 				5997BA091EAC14B600EB9B83 /* Assets.xcassets */,
-				5997BA1A1EAC221900EB9B83 /* GoogleService-Info.plist */,
+				579E9FB11EB0C7B000FAB5C0 /* GoogleService-Info.plist */,
 				5997BA0B1EAC14B600EB9B83 /* LaunchScreen.storyboard */,
 				5997BA0E1EAC14B600EB9B83 /* Info.plist */,
 			);
@@ -237,7 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5997BA0D1EAC14B600EB9B83 /* LaunchScreen.storyboard in Resources */,
-				5997BA1B1EAC221900EB9B83 /* GoogleService-Info.plist in Resources */,
+				579E9FB21EB0C7B000FAB5C0 /* GoogleService-Info.plist in Resources */,
 				5997BA0A1EAC14B600EB9B83 /* Assets.xcassets in Resources */,
 				5997BA081EAC14B600EB9B83 /* Main.storyboard in Resources */,
 			);

@@ -122,7 +122,7 @@ class GraphTabBarViewController: UIViewController {
         var width3 = barWidth;
         for i in 0 ... 4{
             var barView = UIView(frame: CGRect(x:CGFloat(x3 + 5), y:y3, width:width3 - 5, height:-(height3 * CGFloat(questions[i]))))
-            barView.backgroundColor = UIColor(colorLiteralRed:251/255.0, green:10/255.0, blue:95/255.0, alpha:1)
+            barView.backgroundColor = UIColor(colorLiteralRed:51/255.0, green:153/255.0, blue:255/255.0, alpha:1)
             barView.layer.cornerRadius = 5;
             barView.layer.masksToBounds = true;
             var barLabel = UILabel(frame:barView.bounds)
