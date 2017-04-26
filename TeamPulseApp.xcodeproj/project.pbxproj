@@ -32,6 +32,8 @@
 		59A0BF0B1EAF2C47008837A1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF0A1EAF2C47008837A1 /* Player.swift */; };
 		59A0BF0D1EAF3273008837A1 /* PlayerSurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF0C1EAF3273008837A1 /* PlayerSurveyListViewController.swift */; };
 		59A0BF0F1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0BF0E1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift */; };
+		59AD17761EB053D800384C68 /* RespondersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AD17751EB053D800384C68 /* RespondersTableViewController.swift */; };
+		59AD17781EB054D000384C68 /* RespondersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AD17771EB054D000384C68 /* RespondersTableViewCell.swift */; };
 		59CB32F41EAFBF5100B1790E /* PlayerResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB32F31EAFBF5100B1790E /* PlayerResponseViewController.swift */; };
 		A9F02255BC958201B94ABF8A /* Pods_TeamPulseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA541178BB2A06F75BC3F496 /* Pods_TeamPulseApp.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +79,8 @@
 		59A0BF0A1EAF2C47008837A1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		59A0BF0C1EAF3273008837A1 /* PlayerSurveyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSurveyListViewController.swift; sourceTree = "<group>"; };
 		59A0BF0E1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSurveyListTableViewCell.swift; sourceTree = "<group>"; };
+		59AD17751EB053D800384C68 /* RespondersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RespondersTableViewController.swift; sourceTree = "<group>"; };
+		59AD17771EB054D000384C68 /* RespondersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RespondersTableViewCell.swift; sourceTree = "<group>"; };
 		59CB32F31EAFBF5100B1790E /* PlayerResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerResponseViewController.swift; sourceTree = "<group>"; };
 		6F60852242076ABF8C32587B /* Pods-TeamPulseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPulseApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp.release.xcconfig"; sourceTree = "<group>"; };
 		89441C961D553DC7EF1194D9 /* Pods-TeamPulseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamPulseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamPulseApp/Pods-TeamPulseApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				5907B3061EAD08C400204932 /* MyTeamTableCell.swift */,
 				5997BA1E1EAC27F800EB9B83 /* Member.swift */,
 				5997BA061EAC14B600EB9B83 /* Main.storyboard */,
+				59AD17751EB053D800384C68 /* RespondersTableViewController.swift */,
+				59AD17771EB054D000384C68 /* RespondersTableViewCell.swift */,
 				59CB32F31EAFBF5100B1790E /* PlayerResponseViewController.swift */,
 				59A0BF0C1EAF3273008837A1 /* PlayerSurveyListViewController.swift */,
 				59A0BF0E1EAF36F3008837A1 /* PlayerSurveyListTableViewCell.swift */,
@@ -289,8 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59AD17781EB054D000384C68 /* RespondersTableViewCell.swift in Sources */,
 				59A0BF051EAEF24F008837A1 /* GraphTabBarViewController.swift in Sources */,
 				5997BA051EAC14B600EB9B83 /* ViewController.swift in Sources */,
+				59AD17761EB053D800384C68 /* RespondersTableViewController.swift in Sources */,
 				59A0BEFF1EAE9172008837A1 /* NewSurveyViewController.swift in Sources */,
 				5997BA1F1EAC27F800EB9B83 /* Member.swift in Sources */,
 				5907B30D1EAE444900204932 /* SurveyListTableCell.swift in Sources */,

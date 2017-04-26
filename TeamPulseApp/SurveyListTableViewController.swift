@@ -106,7 +106,7 @@ class SurveyListViewController: UITableViewController {
             guard let tabBarController = segue.destination as? UITabBarController else {
                 return }
             
-            let viewController = tabBarController.viewControllers?.first as! PeopleTabBarViewController
+            let viewController = tabBarController.viewControllers?.first as! RespondersTableViewController
             viewController.selectedSurvey = self.selectedSurvey
             
         }
