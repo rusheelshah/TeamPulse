@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RespondersTableViewController: UIViewController {
+class RespondersTableViewController: UITableViewController {
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     var namesRef: FIRDatabaseReference!
     var refHandle: FIRDatabaseHandle?
@@ -18,18 +18,20 @@ class RespondersTableViewController: UIViewController {
     var names: [String]!  = []
     
     override func viewDidLoad() {
-        let team = self.selectedTeam
-        let survey = self.selectedSurvey
-        namesRef = ref.child("Teams").child(team!).child(survey!).child("Responses")
+        print(Responder.survey)
+        print(Responder.team)
+        namesRef = ref.child("Teams").child(Responder.team).child(Responder.survey).child("Responses")
         namesRef.observe(.value, with: { (snapshot) in
             if snapshot.hasChildren(){
                 for child in snapshot.children{
                     if let node = child as? FIRDataSnapshot, var name = node.key as? String{
+                        print(name)
                         if(!(self.names.contains(name))){
                             self.names.append(name)
                         }
                     }
                 }
+                self.tableView.reloadData()
             }
         })
         print(names)
@@ -37,10 +39,31 @@ class RespondersTableViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func onRefresh(_ sender: UIBarButtonItem) {
+        self.viewDidAppear(true)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return self.names.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "responderName"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RespondersTableViewCell else{
+            fatalError("The dequeued cell is not an instance of PlayerSurveyListTableViewCell")
+        }
+        //print(TeamList.surveyList.count)
+        cell.responderName.text = self.names[indexPath.row]
+        return cell
+    }
     
 }

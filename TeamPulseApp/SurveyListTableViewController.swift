@@ -103,11 +103,12 @@ class SurveyListViewController: UITableViewController {
             viewController.currentTeam = selectedTeam
         }
         else if (segue.identifier == "selectSurvey"){
+            Responder.survey = self.selectedSurvey
+            Responder.team = self.selectedTeam
             guard let tabBarController = segue.destination as? UITabBarController else {
                 return }
             
-            let viewController = tabBarController.viewControllers?.first as! RespondersTableViewController
-            viewController.selectedSurvey = self.selectedSurvey
+            guard let navigationController = tabBarController.viewControllers?.first as? UINavigationController else { return }
             
         }
         
