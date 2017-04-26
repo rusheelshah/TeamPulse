@@ -112,6 +112,29 @@ class GraphTabBarViewController: UIViewController {
             y2 = y2 + increment2;
         }
         
+        //draw bars
+        var questions = [1.5, 3.5, 5, 4.7, 2.6]
+        var scoreHeight = (graphView.bounds.size.height - 110) / 5
+        var barWidth = (graphView.bounds.size.width - 100) / 5;
+        var x3 = CGFloat(70)
+        var y3 = graphView.bounds.size.height - 60;
+        var height3 = scoreHeight;
+        var width3 = barWidth;
+        for i in 0 ... 4{
+            var barView = UIView(frame: CGRect(x:CGFloat(x3 + 5), y:y3, width:width3 - 5, height:-(height3 * CGFloat(questions[i]))))
+            barView.backgroundColor = UIColor(colorLiteralRed:251/255.0, green:10/255.0, blue:95/255.0, alpha:1)
+            barView.layer.cornerRadius = 5;
+            barView.layer.masksToBounds = true;
+            var barLabel = UILabel(frame:barView.bounds)
+            barLabel.text = "\(questions[i])"
+            barLabel.textColor = UIColor.white
+            barLabel.textAlignment = NSTextAlignment.center;
+            barView.addSubview(barLabel)
+            graphView.addSubview(barView)
+            x3 = x3 + barWidth
+        }
+
+        
         
         
     }
