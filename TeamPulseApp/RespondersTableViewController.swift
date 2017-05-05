@@ -12,10 +12,16 @@ import Firebase
 class RespondersTableViewController: UITableViewController {
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     var namesRef: FIRDatabaseReference!
+    var graphRef: FIRDatabaseReference!
     var refHandle: FIRDatabaseHandle?
     var selectedTeam: String!
     var selectedSurvey: String!
     var names: [String]!  = []
+    var score1: [Int]! = []
+    var score2: [Int]! = []
+    var score3: [Int]! = []
+    var score4: [Int]! = []
+    var score5: [Int]! = []
     
     override func viewDidLoad() {
         print(Responder.survey)

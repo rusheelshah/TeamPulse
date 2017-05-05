@@ -11,14 +11,74 @@ import UIKit
 import Firebase
 
 class GraphTabBarViewController: UIViewController {
+    var ref: FIRDatabaseReference = FIRDatabase.database().reference()
+    var namesRef: FIRDatabaseReference!
+    var graphRef: FIRDatabaseReference!
+    var refHandle: FIRDatabaseHandle?
     var selectedTeam: String!
     var selectedSurvey: String!
+    var people: Int!
+    var score1: [String]! = []
+    var score2: [String]! = []
+    var score3: [String]! = []
+    var score4: [String]! = []
+    var score5: [String]! = []
+
     
     override func viewDidLoad() {
-        self.title = selectedTeam
+        self.loadData()
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.createGraph()
+        //self.createGraph()
+    }
+    
+    func loadData(){
+        self.title = Responder.survey
+        namesRef = ref.child("Teams").child(Responder.team).child(Responder.survey).child("Responses")
+        namesRef.observe(.value, with: { (snapshot) in
+            if snapshot.hasChildren(){
+                let count = snapshot.childrenCount
+                self.people = Int(count)
+                for child in snapshot.children{
+                    if let node = child as? FIRDataSnapshot, var name = node.key as? String{
+                        print(name)
+                        self.getAnswers(name: name)
+                    }
+                }
+            }
+            self.createGraph()
+        })
+        
+    }
+    
+    func getAnswers(name: String){
+        self.graphRef = self.ref.child("Teams").child(Responder.team).child(Responder.survey).child("Responses").child(name)
+        self.graphRef.observe(.value, with: { (snapshot2) in
+            if(snapshot2.hasChildren()){
+                for child in snapshot2.children{
+                    if let node = child as? FIRDataSnapshot, var question = node.key as? String{
+                        if(node.key == "1"){
+                            print(node.value)
+                            self.score1.append(node.value as! String)
+                        }
+                        else if(node.key == "2"){
+                            self.score2.append(node.value as! String)
+                        }
+                        else if(node.key == "3"){
+                            self.score3.append(node.value as! String)
+                        }
+                        else if(node.key == "4"){
+                            self.score4.append(node.value as! String)
+                        }
+                        else if(node.key == "5"){
+                            self.score5.append(node.value as! String)
+                        }
+                    }
+                }
+            }
+            self.createGraph()
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +100,7 @@ class GraphTabBarViewController: UIViewController {
         
         //add title
         
-        let titleString = "\(selectedSurvey) Survey Responses"
+        let titleString = "\(Responder.survey) Survey Responses"
         let title = UILabel(frame: CGRect(x: 0, y: 15, width: graphView.bounds.size.width, height: 20));
         title.text = titleString as String;
         title.numberOfLines = 0;
@@ -52,7 +112,7 @@ class GraphTabBarViewController: UIViewController {
         let xVals = ["1", "2", "3", "4", "5"]
         
         //yVals
-        let yVals = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]
+        let yVals = ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]
         
         //draw y-axis
         var yAxis = UIBezierPath()
@@ -113,7 +173,27 @@ class GraphTabBarViewController: UIViewController {
         }
         
         //draw bars
-        var questions = [1.5, 3.5, 5, 4.7, 2.6]
+        var q1 = 0
+        var q2 = 0
+        var q3 = 0
+        var q4 = 0
+        var q5 = 0
+//        for i in 0 ... 4{
+//            q1 = q1 + Int(score1[i])!
+//            q2 = q2 + Int(score2[i])!
+//            q3 = q3 + Int(score3[i])!
+//            q4 = q4 + Int(score4[i])!
+//            q5 = q5 + Int(score5[i])!
+//        }
+        if(!self.score1.isEmpty){
+            q1 = q1 + Int(score1[0])!
+            q2 = q2 + Int(score2[0])!
+            q3 = q3 + Int(score3[0])!
+            q4 = q4 + Int(score4[0])!
+            q5 = q5 + Int(score5[0])!
+        }
+        var questions = [q1, q2, q3, q4, q5]
+        //var questions = [3.5, 1.9, 5.0, 4.7, 2.6]
         var scoreHeight = (graphView.bounds.size.height - 110) / 5
         var barWidth = (graphView.bounds.size.width - 100) / 5;
         var x3 = CGFloat(70)
