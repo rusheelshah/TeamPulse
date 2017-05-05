@@ -18,6 +18,7 @@ class SurveyListViewController: UITableViewController {
     var selectedSurvey: String!
     @IBOutlet weak var teamName: UINavigationItem!
     override func viewDidLoad() {
+        TeamList.surveyList.removeAll()
         teamName.title = self.selectedTeam
         if(self.selectedTeam != nil){
             let testRef = ref.child("Teams").child(self.selectedTeam)
@@ -27,14 +28,13 @@ class SurveyListViewController: UITableViewController {
                         if let node = child as? FIRDataSnapshot{
                             print(node.key)
                         }
-                        if let node = child as? FIRDataSnapshot, var surveyName = node.key as? String{
+                        if let node = child as? FIRDataSnapshot, let surveyName = node.key as String?{
                             if(surveyName != "password"){
                                 if(TeamList.surveyList.isEmpty){
                                     let newSurvey = Survey(name: surveyName)
                                     TeamList.surveyList.append(newSurvey)
                                 }
                                 else{
-                                    let tempList = TeamList.surveyList
                                     for item in TeamList.surveyList{
                                         TeamList.surveyNameList.append(item.name)
                                     }
@@ -108,7 +108,7 @@ class SurveyListViewController: UITableViewController {
             guard let tabBarController = segue.destination as? UITabBarController else {
                 return }
             
-            guard let navigationController = tabBarController.viewControllers?.first as? UINavigationController else { return }
+            guard (tabBarController.viewControllers?.first as? UINavigationController) != nil else { return }
             
         }
         

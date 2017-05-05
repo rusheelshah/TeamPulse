@@ -36,30 +36,32 @@ class GraphTabBarViewController: UIViewController {
     func loadData(){
         self.title = Responder.survey
         namesRef = ref.child("Teams").child(Responder.team).child(Responder.survey).child("Responses")
-        namesRef.observe(.value, with: { (snapshot) in
+        namesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            //let dict = snapshot.value as? NSDictionary
+            //print(dict)
             if snapshot.hasChildren(){
                 let count = snapshot.childrenCount
                 self.people = Int(count)
                 for child in snapshot.children{
-                    if let node = child as? FIRDataSnapshot, var name = node.key as? String{
+                    if let node = child as? FIRDataSnapshot, let name = node.key as String?{
                         print(name)
                         self.getAnswers(name: name)
                     }
                 }
             }
-            self.createGraph()
+            //self.createGraph()
         })
         
     }
     
     func getAnswers(name: String){
         self.graphRef = self.ref.child("Teams").child(Responder.team).child(Responder.survey).child("Responses").child(name)
-        self.graphRef.observe(.value, with: { (snapshot2) in
+        self.graphRef.observeSingleEvent(of: .value, with: { (snapshot2) in
             if(snapshot2.hasChildren()){
                 for child in snapshot2.children{
-                    if let node = child as? FIRDataSnapshot, var question = node.key as? String{
+                    if let node = child as? FIRDataSnapshot, var _ = node.key as String?{
                         if(node.key == "1"){
-                            print(node.value)
+                            //print(node.value)
                             self.score1.append(node.value as! String)
                         }
                         else if(node.key == "2"){
@@ -115,10 +117,10 @@ class GraphTabBarViewController: UIViewController {
         let yVals = ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"]
         
         //draw y-axis
-        var yAxis = UIBezierPath()
+        let yAxis = UIBezierPath()
         yAxis.move(to: CGPoint(x: 70, y: graphView.bounds.size.height - 60));
         yAxis.addLine(to: CGPoint(x:70, y: 30 + title.bounds.size.height));
-        var yAxisLayer = CAShapeLayer()
+        let yAxisLayer = CAShapeLayer()
         yAxisLayer.path = yAxis.cgPath
         yAxisLayer.strokeColor = UIColor(colorLiteralRed: 77/255.0, green: 77/255.0, blue: 22/255.0, alpha: 1).cgColor
         yAxisLayer.lineWidth = 3.0;
@@ -126,10 +128,10 @@ class GraphTabBarViewController: UIViewController {
         graphView.layer.addSublayer(yAxisLayer)
         
         //draw x-axis
-        var xAxis = UIBezierPath()
+        let xAxis = UIBezierPath()
         xAxis.move(to: CGPoint(x: 70, y: graphView.bounds.size.height - 60));
         xAxis.addLine(to: CGPoint(x:graphView.bounds.size.width - 30, y: graphView.bounds.size.height - 60));
-        var xAxisLayer = CAShapeLayer()
+        let xAxisLayer = CAShapeLayer()
         xAxisLayer.path = xAxis.cgPath
         xAxisLayer.strokeColor = UIColor(colorLiteralRed: 77/255.0, green: 77/255.0, blue: 22/255.0, alpha: 1).cgColor
         xAxisLayer.lineWidth = 3.0;
@@ -137,19 +139,19 @@ class GraphTabBarViewController: UIViewController {
         graphView.layer.addSublayer(xAxisLayer)
         
         //add x-axis title
-        var xtitle = UILabel(frame: CGRect(x: 70, y: graphView.bounds.size.height - 20, width: graphView.bounds.size.width - 100, height: 20))
+        let xtitle = UILabel(frame: CGRect(x: 70, y: graphView.bounds.size.height - 20, width: graphView.bounds.size.width - 100, height: 20))
         xtitle.text = "Questions"
         xtitle.textAlignment = NSTextAlignment.center;
         xtitle.textColor = UIColor(colorLiteralRed: 77/255.0, green: 77/255.0, blue: 22/255.0, alpha: 1)
         
         //add x-axis labels
-        var increment = (graphView.bounds.size.width - 100) / 5
+        let increment = (graphView.bounds.size.width - 100) / 5
         var x = CGFloat(70);
-        var y = graphView.bounds.size.height - 50;
-        var height = CGFloat(15);
-        var width = increment;
+        let y = graphView.bounds.size.height - 50;
+        let height = CGFloat(15);
+        let width = increment;
         for i in 0 ... 4{
-            var label = UILabel(frame: CGRect(x:x, y:y, width:width, height:height));
+            let label = UILabel(frame: CGRect(x:x, y:y, width:width, height:height));
             label.text = xVals[i];
             label.textColor = UIColor(colorLiteralRed: 77/255.0, green: 77/255.0, blue: 22/255.0, alpha: 1)
             label.textAlignment = NSTextAlignment.center;
@@ -158,13 +160,13 @@ class GraphTabBarViewController: UIViewController {
         }
         
         //add y-axis labels
-        var increment2 = (graphView.bounds.size.height - 110) / 5
-        var x2 = CGFloat(5);
+        let increment2 = (graphView.bounds.size.height - 110) / 5
+        let x2 = CGFloat(5);
         var y2 = CGFloat(50);
-        var height2 = CGFloat(50);
-        var width2 = CGFloat(60);
+        let height2 = CGFloat(50);
+        let width2 = CGFloat(60);
         for i in 0 ... 4{
-            var label2 = UITextView(frame: CGRect(x:x2, y:y2, width:width2, height:height2));
+            let label2 = UITextView(frame: CGRect(x:x2, y:y2, width:width2, height:height2));
             label2.text = yVals[i];
             label2.textColor = UIColor(colorLiteralRed: 77/255.0, green: 77/255.0, blue: 22/255.0, alpha: 1)
             label2.textAlignment = NSTextAlignment.center;
@@ -178,34 +180,34 @@ class GraphTabBarViewController: UIViewController {
         var q3 = 0
         var q4 = 0
         var q5 = 0
-//        for i in 0 ... 4{
-//            q1 = q1 + Int(score1[i])!
-//            q2 = q2 + Int(score2[i])!
-//            q3 = q3 + Int(score3[i])!
-//            q4 = q4 + Int(score4[i])!
-//            q5 = q5 + Int(score5[i])!
-//        }
-        if(!self.score1.isEmpty){
-            q1 = q1 + Int(score1[0])!
-            q2 = q2 + Int(score2[0])!
-            q3 = q3 + Int(score3[0])!
-            q4 = q4 + Int(score4[0])!
-            q5 = q5 + Int(score5[0])!
+        for i in 0 ... (score1.count - 1){
+            q1 = q1 + Int(score1[i])!
+            q2 = q2 + Int(score2[i])!
+            q3 = q3 + Int(score3[i])!
+            q4 = q4 + Int(score4[i])!
+            q5 = q5 + Int(score5[i])!
         }
-        var questions = [q1, q2, q3, q4, q5]
+//        if(!self.score1.isEmpty){
+//            q1 = q1 + Int(score1[0])!
+//            q2 = q2 + Int(score2[0])!
+//            q3 = q3 + Int(score3[0])!
+//            q4 = q4 + Int(score4[0])!
+//            q5 = q5 + Int(score5[0])!
+//        }
+        var questions = [(q1/score1.count), (q2/score1.count), (q3/score1.count), (q4/score1.count), (q5/score1.count)]
         //var questions = [3.5, 1.9, 5.0, 4.7, 2.6]
-        var scoreHeight = (graphView.bounds.size.height - 110) / 5
-        var barWidth = (graphView.bounds.size.width - 100) / 5;
+        let scoreHeight = (graphView.bounds.size.height - 110) / 5
+        let barWidth = (graphView.bounds.size.width - 100) / 5;
         var x3 = CGFloat(70)
-        var y3 = graphView.bounds.size.height - 60;
-        var height3 = scoreHeight;
-        var width3 = barWidth;
+        let y3 = graphView.bounds.size.height - 60;
+        let height3 = scoreHeight;
+        let width3 = barWidth;
         for i in 0 ... 4{
-            var barView = UIView(frame: CGRect(x:CGFloat(x3 + 5), y:y3, width:width3 - 5, height:-(height3 * CGFloat(questions[i]))))
+            let barView = UIView(frame: CGRect(x:CGFloat(x3 + 5), y:y3, width:width3 - 5, height:-(height3 * CGFloat(questions[i]))))
             barView.backgroundColor = UIColor(colorLiteralRed:51/255.0, green:153/255.0, blue:255/255.0, alpha:1)
             barView.layer.cornerRadius = 5;
             barView.layer.masksToBounds = true;
-            var barLabel = UILabel(frame:barView.bounds)
+            let barLabel = UILabel(frame:barView.bounds)
             barLabel.text = "\(questions[i])"
             barLabel.textColor = UIColor.white
             barLabel.textAlignment = NSTextAlignment.center;

@@ -29,7 +29,7 @@ class AddNewSurveyViewController: UIViewController {
         
         if(!(self.surveyName.text?.isEmpty)!){
             let name = self.surveyName.text!
-            let currentSurvey = Survey(name: name)
+            //let currentSurvey = Survey(name: name)
             //TeamList.surveyList.append(currentSurvey)
             self.ref.child("Teams").child(self.currentTeam).child(name)
         }
@@ -40,7 +40,7 @@ class AddNewSurveyViewController: UIViewController {
         if (segue.identifier == "newSurvey") {
             
             // initialize new view controller and cast it as your view controller
-            var viewController = segue.destination as! NewSurveyViewController
+            let viewController = segue.destination as! NewSurveyViewController
             // your new view controller should have property that will store passed value
             viewController.surveyName = self.surveyName.text!
             viewController.currentTeam = self.currentTeam

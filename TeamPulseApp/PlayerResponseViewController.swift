@@ -11,6 +11,7 @@ import Firebase
 class PlayerResponseViewController: UIViewController {
     var ref: FIRDatabaseReference!
     var surveyQuestionsRef: FIRDatabaseReference!
+    var responsesRef: FIRDatabaseReference!
     var selectedSurvey: String!
     var values: [Int] = []
     var value1: Int!
@@ -45,7 +46,7 @@ class PlayerResponseViewController: UIViewController {
         self.surveyQuestionsRef.observe(.value, with: { (snapshot) in
             if(snapshot.hasChildren()){
                 for child in snapshot.children{
-                    if let node = child as? FIRDataSnapshot, var surveyName = node.key as? String{
+                    if let node = child as? FIRDataSnapshot, let _ = node.key as String?{
                         if(node.key == "1"){
                             self.question1.text = node.value as? String
                         }
@@ -202,6 +203,21 @@ class PlayerResponseViewController: UIViewController {
     }
     
     @IBAction func onDoneButton(_ sender: UIBarButtonItem) {
+        if(self.value1 == nil){
+            self.value1 = 3
+        }
+        if(self.value2 == nil){
+            self.value2 = 3
+        }
+        if(self.value3 == nil){
+            self.value3 = 3
+        }
+        if(self.value4 == nil){
+            self.value4 = 3
+        }
+        if(self.value5 == nil){
+            self.value5 = 3
+        }
         self.surveyQuestionsRef.child("Responses").child(Player.playerName).child("1").setValue(String(self.value1))
         self.surveyQuestionsRef.child("Responses").child(Player.playerName).child("2").setValue(String(self.value2))
         self.surveyQuestionsRef.child("Responses").child(Player.playerName).child("3").setValue(String(self.value3))

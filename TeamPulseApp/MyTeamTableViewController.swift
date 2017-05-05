@@ -23,7 +23,7 @@ class MyTeamTableViewController: UITableViewController {
         testRef.observe(.value, with: { (snapshot) in
             if snapshot.hasChildren(){
                 for child in snapshot.children{
-                    if let node = child as? FIRDataSnapshot, var id = node.key as? String{
+                    if let node = child as? FIRDataSnapshot, let id = node.key as String?{
                         if(TeamList.teamList.isEmpty){
                             TeamList.teamList.append(id)
                         }
@@ -88,9 +88,8 @@ class MyTeamTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "selectedTeam") {
-            
             // initialize new view controller and cast it as your view controller
-            var viewController = segue.destination as! SurveyListViewController
+            let viewController = segue.destination as! SurveyListViewController
             // your new view controller should have property that will store passed value
             viewController.selectedTeam = selectedTeam
         }

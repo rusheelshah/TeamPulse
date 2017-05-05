@@ -30,7 +30,7 @@ class RespondersTableViewController: UITableViewController {
         namesRef.observe(.value, with: { (snapshot) in
             if snapshot.hasChildren(){
                 for child in snapshot.children{
-                    if let node = child as? FIRDataSnapshot, var name = node.key as? String{
+                    if let node = child as? FIRDataSnapshot, let name = node.key as String?{
                         print(name)
                         if(!(self.names.contains(name))){
                             self.names.append(name)
