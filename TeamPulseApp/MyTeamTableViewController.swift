@@ -23,16 +23,36 @@ class MyTeamTableViewController: UITableViewController {
         testRef.observe(.value, with: { (snapshot) in
             if snapshot.hasChildren(){
                 for child in snapshot.children{
-                    if let node = child as? FIRDataSnapshot, let id = node.key as String?{
-                        if(TeamList.teamList.isEmpty){
-                            TeamList.teamList.append(id)
-                        }
-                        else{
-                            if(!(TeamList.teamList.contains(id))){
-                                TeamList.teamList.append(id)
+                    if let node = child as? FIRDataSnapshot, let _ = node.key as String?{
+                        for child in node.children{
+                            let item = child as? FIRDataSnapshot
+                            if (item?.key == "0NumPlayers"){
+//                                if(TeamList.teamList.isEmpty){
+//                                    TeamList.teamList.append(TeamID(teamID: node.key, numPlayers: item?.value as! Int))
+//                                }
+//                                else{
+//                                    var contained: Bool = false
+//                                    for element in TeamList.teamList{
+//                                        if (element.teamID == node.key){
+//                                            contained = true
+//                                        }
+//                                    }
+//                                    if(!contained){
+//                                         TeamList.teamList.append(TeamID(teamID: node.key, numPlayers: item?.value as! Int))
+//                                    }
+//                                }
+                                var contained: Bool = false
+                                for element in TeamList.teamList{
+                                    if (element.teamID == node.key){
+                                        contained = true
+                                    }
+                                }
+                                if(!contained){
+                                    TeamList.teamList.append(TeamID(teamID: node.key, numPlayers: item?.value as! String))
+                                }
                             }
                         }
-                        self.teams.append(id)
+                        self.teams.append(node.key)
                     }
                 }
                 self.tableView.reloadData()
@@ -61,7 +81,7 @@ class MyTeamTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of MyTeamTableViewCell")
         }
         //print(TeamList.teamList.count)
-        cell.teamID.text = TeamList.teamList[indexPath.row]
+        cell.teamID.text = TeamList.teamList[indexPath.row].teamID
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

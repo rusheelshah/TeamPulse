@@ -17,6 +17,8 @@ class NewTeamViewController: UIViewController {
     @IBOutlet weak var inputConfirm: UITextField!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var invalidPassword: UILabel!
+    @IBOutlet weak var numPlayers: UITextField!
+    
     override func viewDidLoad() {
         invalidPassword.isHidden = true
         self.ref = FIRDatabase.database().reference()
@@ -24,10 +26,17 @@ class NewTeamViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     @IBAction func onDone(_ sender: UIBarButtonItem) {
-        if(!(self.inputTeamID.text?.isEmpty)!){
-            TeamID.teamID = self.inputTeamID.text!
+        if((inputTeamID.text?.isEmpty)! && (inputPassword.text?.isEmpty)! && (inputConfirm.text?.isEmpty)! && (numPlayers.text?.isEmpty)!){
+            self.dismiss(animated: true, completion: nil)
+        }
+        if((!(self.inputTeamID.text?.isEmpty)!) && (!(self.numPlayers.text?.isEmpty)!)){
+//            TeamID.teamID = self.inputTeamID.text!
+//            TeamID.numPlayers = Int(self.numPlayers.text!)!
+            let team = TeamID(teamID: self.inputTeamID.text!, numPlayers: self.numPlayers.text!)
             if((self.inputPassword.text) == (self.inputConfirm.text)){
-                self.ref.child("Teams").child(TeamID.teamID).child("password").setValue(self.inputPassword.text)
+                TeamList.teamList.append(team)
+                self.ref.child("Teams").child(team.teamID).child("password").setValue(self.inputPassword.text)
+                self.ref.child("Teams").child(team.teamID).child("0NumPlayers").setValue(self.numPlayers.text)
                 self.dismiss(animated: true, completion: nil)
             }
             else{

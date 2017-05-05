@@ -10,6 +10,7 @@ import UIKit
 
 class PlayerSurveyListTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var done: UILabel!
     @IBOutlet weak var surveyLabel: UILabel!
     
     override func awakeFromNib() {

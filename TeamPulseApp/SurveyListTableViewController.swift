@@ -16,6 +16,8 @@ class SurveyListViewController: UITableViewController {
     var surveysDict: [String: AnyObject] = [:]
     var selectedTeam: String!
     var selectedSurvey: String!
+    var numResponses: UInt!
+    var numPlayers: String!
     @IBOutlet weak var teamName: UINavigationItem!
     override func viewDidLoad() {
         TeamList.surveyList.removeAll()
@@ -29,23 +31,66 @@ class SurveyListViewController: UITableViewController {
                             print(node.key)
                         }
                         if let node = child as? FIRDataSnapshot, let surveyName = node.key as String?{
+                            self.numResponses = 0
                             if(surveyName != "password"){
                                 if(TeamList.surveyList.isEmpty){
-                                    let newSurvey = Survey(name: surveyName)
-                                    TeamList.surveyList.append(newSurvey)
+                                    if(surveyName != "0NumPlayers"){
+                                        print(surveyName)
+                                        for item in node.children{
+                                            if let response = item as? FIRDataSnapshot{
+                                                if(response.key == "Responses"){
+                                                    self.numResponses = response.childrenCount
+                                                    print(self.numResponses)
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        self.numPlayers = node.value as! String?
+                                        print(self.numPlayers)
+                                    }
+                                    let newSurvey = Survey(name: surveyName, allAnswered: false)
+                                    if(!(surveyName == "0NumPlayers")){
+                                        if(self.numPlayers != nil && self.numResponses != nil && self.numPlayers == String(self.numResponses)){
+                                            newSurvey.allAnswered = true
+                                            print("All Answered!")
+                                        }
+                                        TeamList.surveyList.append(newSurvey)
+                                    }
                                 }
                                 else{
+                                    if(surveyName != "0NumPlayers"){
+                                        for item in node.children{
+                                            if let response = item as? FIRDataSnapshot{
+                                                if(response.key == "Responses"){
+                                                    self.numResponses = response.childrenCount
+                                                    print(self.numResponses)
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        self.numPlayers = node.value as! String?
+                                        print(self.numPlayers)
+                                    }
                                     for item in TeamList.surveyList{
                                         TeamList.surveyNameList.append(item.name)
                                     }
                                     if(!(TeamList.surveyNameList.contains(surveyName))){
-                                        let newSurvey = Survey(name: surveyName)
-                                        TeamList.surveyList.append(newSurvey)
+                                        if(!(surveyName == "0NumPlayers")){
+                                            let newSurvey = Survey(name: surveyName, allAnswered: false)
+                                            if(self.numPlayers != nil && self.numResponses != nil && self.numPlayers == String(self.numResponses)){
+                                                newSurvey.allAnswered = true
+                                                print("All Answered!")
+                                            }
+                                            TeamList.surveyList.append(newSurvey)
+                                        }
                                     }
                                 }
 
                             }
                         }
+                        
                     }
                     print(TeamList.surveyList.count)
                     self.tableView.reloadData()
@@ -77,6 +122,12 @@ class SurveyListViewController: UITableViewController {
         }
         print(TeamList.surveyList.count)
         cell.surveyName.text = TeamList.surveyList[indexPath.row].name
+        if(TeamList.surveyList[indexPath.row].allAnswered){
+            cell.allResponded.isHidden = false
+        }
+        else{
+            cell.allResponded.isHidden = true
+        }
         return cell
     }
     

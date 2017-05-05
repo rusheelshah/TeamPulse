@@ -10,7 +10,12 @@ import Foundation
 import Firebase
 
 
-struct TeamID{
-    static var teamID: String = ""
+class TeamID{
+    var teamID: String
+    var numPlayers: String
+    init(teamID: String, numPlayers: String) {
+        self.teamID = teamID
+        self.numPlayers = numPlayers
+    }
 }
 

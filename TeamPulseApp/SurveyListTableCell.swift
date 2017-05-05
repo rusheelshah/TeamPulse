@@ -10,6 +10,7 @@ import UIKit
 
 class SurveyListTableViewCell: UITableViewCell {    
     @IBOutlet weak var surveyName: UILabel!
+    @IBOutlet weak var allResponded: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

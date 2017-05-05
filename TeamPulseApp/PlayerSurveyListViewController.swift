@@ -28,7 +28,7 @@ class PlayerSurveyListViewController: UITableViewController {
                 print("num " + String(snapshot.childrenCount))
                 for child in snapshot.children{
                     if let node = child as? FIRDataSnapshot, var _ = node.key as String?{
-                        if(node.key != "password" && !(self.surveyList.contains(node.key))){
+                        if(node.key != "password" && node.key != "0NumPlayers" && !(self.surveyList.contains(node.key))){
                             print("here: " + node.key)
                             self.surveyList.append(node.key)
                         }

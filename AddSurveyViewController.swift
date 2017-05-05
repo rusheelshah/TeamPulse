@@ -24,7 +24,7 @@ class AddNewSurveyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        let currentSurvey = Survey(name: self.surveyName.text!)
+        let currentSurvey = Survey(name: self.surveyName.text!, allAnswered: false)
         TeamList.surveyList.append(currentSurvey)
         
         if(!(self.surveyName.text?.isEmpty)!){
@@ -45,6 +45,7 @@ class AddNewSurveyViewController: UIViewController {
             viewController.surveyName = self.surveyName.text!
             viewController.currentTeam = self.currentTeam
         }
+        
         
     }
 }

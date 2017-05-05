@@ -24,8 +24,10 @@ class GraphTabBarViewController: UIViewController {
     var score4: [String]! = []
     var score5: [String]! = []
 
+    @IBOutlet weak var noResponseLabel: UILabel!
     
     override func viewDidLoad() {
+        self.noResponseLabel.isHidden = true
         self.loadData()
         
         super.viewDidLoad()
@@ -48,6 +50,9 @@ class GraphTabBarViewController: UIViewController {
                         self.getAnswers(name: name)
                     }
                 }
+            }
+            else{
+                self.noResponseLabel.isHidden = false
             }
             //self.createGraph()
         })
@@ -187,13 +192,6 @@ class GraphTabBarViewController: UIViewController {
             q4 = q4 + Int(score4[i])!
             q5 = q5 + Int(score5[i])!
         }
-//        if(!self.score1.isEmpty){
-//            q1 = q1 + Int(score1[0])!
-//            q2 = q2 + Int(score2[0])!
-//            q3 = q3 + Int(score3[0])!
-//            q4 = q4 + Int(score4[0])!
-//            q5 = q5 + Int(score5[0])!
-//        }
         var questions = [(q1/score1.count), (q2/score1.count), (q3/score1.count), (q4/score1.count), (q5/score1.count)]
         //var questions = [3.5, 1.9, 5.0, 4.7, 2.6]
         let scoreHeight = (graphView.bounds.size.height - 110) / 5

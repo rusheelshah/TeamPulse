@@ -11,7 +11,7 @@ import Foundation
 
 
 class TeamList{
-    static var teamList = [String]()
+    static var teamList = [TeamID]()
     static var surveyList = [Survey]()
     static var surveyNameList = [String]()
 }
